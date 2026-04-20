@@ -119,10 +119,6 @@ if (predictionMethod==1)
     Trainsize=floor(0.8*numfiles2);
     Testsize=floor(0.2*numfiles2);
 
-    randIdxNormal=randperm(numfilesNormal);
-    TrainsizeNormal=floor(0.8*numfilesNormal);
-    TestsizeNormal=floor(0.2*numfilesNormal);
-
     trainData=data(randIdx(1:Trainsize),:,:);
     testData=data(randIdx(Trainsize+1:Trainsize+Testsize),:,:);
     trainLabel=label(randIdx(1:Trainsize));
