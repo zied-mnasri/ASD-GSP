@@ -124,9 +124,9 @@ if (predictionMethod==1)
     TestsizeNormal=floor(0.2*numfilesNormal);
 
     trainData=data(randIdx(1:Trainsize),:,:);
-    trainDataNormal=normalData(randIdxNormal(1:TrainsizeNormal),:,:);
     testData=data(randIdx(Trainsize+1:Trainsize+Testsize),:,:);
     trainLabel=label(randIdx(1:Trainsize));
+    trainDataNormal = trainData(trainlabel == 1, :);
     trainLabelNormal=ones(size(trainDataNormal,1),1);
     trainLabel=trainLabel.';    
     testLabel=label(randIdx(Trainsize+1:Trainsize+Testsize));
